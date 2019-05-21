@@ -4,7 +4,7 @@ kind: OfflineVirtualMachine
 metadata:
   annotations: {}
   name: nodejs
-  namespace: nodejs-ex
+  namespace: demo
 spec:
   running: false
   template:
@@ -47,7 +47,7 @@ kind: OfflineVirtualMachine
 metadata:
   annotations: {}
   name: mongodb
-  namespace: nodejs-ex
+  namespace: demo
 spec:
   running: false
   template:
@@ -88,7 +88,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: mongodb
-  namespace: nodejs-ex
+  namespace: demo
   labels:
     kubevirt.io: virt-launcher
     kubevirt.io/domain: mongodb
@@ -106,7 +106,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: nodejs
-  namespace: nodejs-ex
+  namespace: demo
   labels:
     kubevirt.io: virt-launcher
     kubevirt.io/domain: nodejs
@@ -123,7 +123,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: nodejs
-  namespace: nodejs-ex
+  namespace: demo
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
